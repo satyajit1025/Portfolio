@@ -1,5 +1,5 @@
 var typed = new Typed('#element', {
-    strings: ['Front-End Developer', 'AWS Cloud Engineer', 'UX Designer .'],
+    strings: ['Software Tester', 'AWS Cloud Engineer'],
     typeSpeed: 50,
     backSpeed: 40,
     backDelay: 1000,
@@ -29,6 +29,34 @@ function loadanimation() {
     })
 }
 loadanimation()
+
+gsap.registerPlugin(ScrollTrigger);
+
+const sectionIds = ["About", "St", "Skills", "Projects", "Contact"];
+
+sectionIds.forEach((id) => {
+    const section = document.getElementById(id);
+    gsap.fromTo(
+        section,
+        { opacity: 0, y: 50 },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            ease: "power1.in",
+            scrollTrigger: {
+                trigger: section,
+                start: "top 70%",
+                // end: "top 50%",
+                toggleActions: "play reverse play reverse",
+                markers: false,
+            },
+        }
+    );
+});
+
+
+
 
 
 
