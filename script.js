@@ -46,8 +46,6 @@ sectionIds.forEach((id) => {
             ease: "power1.in",
             scrollTrigger: {
                 trigger: section,
-                start: "top 70%",
-                // end: "top 50%",
                 toggleActions: "play reverse play reverse",
                 markers: false,
             },
